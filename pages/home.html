@@ -585,7 +585,7 @@ function getPoolTransactions(){
 			}
 			updateText('mempool_count', txcount);
 			updateText('mempool_amount', getReadableCoins(totalAmount,4));
-			updateText('mempool_fees', getReadableCoins(totalFee, 8));
+			updateText('mempool_fees', getReadableCoins(totalFee, 4));
 			updateText('mempool_sizes', formatBytes(parseInt(totalSize)));
 		}
 	}
