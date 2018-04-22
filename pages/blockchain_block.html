@@ -81,7 +81,7 @@
 		}
 		sessionStorage.removeItem('searchBlock');
     }
-	
+
 	function renderBlock(block){
 				updateText('block.hash', block.hash);
 				updateText('block.height', block.height);
@@ -101,9 +101,9 @@
 				updateText('block.totalCoins', getReadableCoins(block.alreadyGeneratedCoins));
 				updateText('block.totalTransactions', block.alreadyGeneratedTransactions);
 				renderTransactions(block.transactions);
-			
+
 				makePrevBlockLink(block.prev_hash);
-				
+
 				$.ajax({
 					url: api + '/json_rpc',
 					method: "POST",
@@ -128,9 +128,9 @@
 					error: function (ajaxContext) {
 					}
 				});
-	
+
 	}
-	
+
     function getTransactionCells(transaction){
         return '<td>' + formatPaymentLink(transaction.hash) + '</td>' +
                '<td>' + getReadableCoins(transaction.fee, 4, true) + '</td>' +
@@ -173,21 +173,21 @@
 
         }
     }
-	
+
 	function makeNextBlockLink(blockHash){
-		$('#block_height').append(' <a href="' + getBlockchainUrl(blockHash) + '" title="Next block"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>');
+		$('#block_height').append(' <a href="/explorer/' + getBlockchainUrl(blockHash) + '" title="Next block"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>');
 	}
-	
+
 	function makePrevBlockLink(blockHash){
-		$('#block_height').prepend('<a href="' + getBlockchainUrl(blockHash) + '" title="Previous block"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a> ');
+		$('#block_height').prepend('<a href="/explorer/' + getBlockchainUrl(blockHash) + '" title="Previous block"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a> ');
 	}
-	
+
 	function formatPrevNextBlockLink(hash){
-        return '<a href="' + getBlockchainUrl(hash) + '">' + hash + '</a>';
+        return '<a href="/explorer/' + getBlockchainUrl(hash) + '">' + hash + '</a>';
     }
-	
+
 	$(function() {
 		$('[data-toggle="tooltip"]').tooltip();
 	});
-	
+
 </script>

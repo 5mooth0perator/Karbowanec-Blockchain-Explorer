@@ -136,7 +136,7 @@
     }
 
     function formatBlockLink(hash){
-        return '<a href="' + getBlockchainUrl(hash) + '">' + hash + '</a>';
+        return '<a href="/explorer/' + getBlockchainUrl(hash) + '">' + hash + '</a>';
     }
 
     function getReadableCoins(coins, digits, withoutSymbol){
@@ -154,7 +154,7 @@
 	}
 
 	function formatPaymentLink(hash){
-        return '<a href="' + getTransactionUrl(hash) + '">' + hash + '</a>';
+        return '<a href="/explorer/' + getTransactionUrl(hash) + '">' + hash + '</a>';
     }
 
     function pulseLiveUpdate(){
@@ -289,7 +289,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand " href="/"><!--<span id="coinIcon">&#1180;</span> --><strong>Robinhood</strong></a>
+            <a class="navbar-brand " href="/explorer/"><!--<span id="coinIcon">&#1180;</span> --><strong>Robinhood</strong></a>
 			<div id="stats_updated"><i class="fa fa-bolt"></i></div>
         </div>
 
